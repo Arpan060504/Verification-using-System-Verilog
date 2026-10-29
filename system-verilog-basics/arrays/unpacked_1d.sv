@@ -8,7 +8,9 @@ module unpacked_1d;
         array_1[1] = -2;
         array_1[2] = 8;
 
-        array_2 = '{12, 23, 35};
+        array_2[0] = 12;
+        array_2[1] = 23;
+        array_2[2] = 35;
 
         for (int i = 0; i < 3; i++) begin
             $display("index: %0d, array_1 = %0d, array_2 = %0d",
