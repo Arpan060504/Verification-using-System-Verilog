@@ -1,0 +1,29 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "D:\iverilog\lib\ivl\system.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2009.vpi";
+S_000001ce08863350 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_000001ce088634e0 .scope package, "my_pkg" "my_pkg" 3 1;
+ .timescale 0 0;
+P_000001ce087d7d30 .param/l "MAX_SIZE" 0 3 4, +C4<00000000000000000000000001100100>;
+S_000001ce087da190 .scope module, "tb" "tb" 3 9;
+ .timescale 0 0;
+    .scope S_000001ce087da190;
+T_0 ;
+    %vpi_call/w 3 12 "$display", "Maximum size = %0d", P_000001ce087d7d30 {0 0 0};
+    %vpi_call/w 3 14 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "global_constant.sv";

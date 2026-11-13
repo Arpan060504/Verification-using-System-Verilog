@@ -1,0 +1,63 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "D:\iverilog\lib\ivl\system.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2009.vpi";
+S_0000020107ea5f00 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+C0000020107ea6e70  .class "example" [1]
+   0: "data", "sb32"
+ ;
+S_0000020107fdeb90 .scope class, "example" "example" 3 1, 3 1 0, S_0000020107ea5f00;
+ .timescale 0 0;
+v0000020107ea1a30_0 .var/2s "data", 31 0;
+S_0000020107fded20 .scope autofunction.void, "display" "display" 3 5, 3 5 0, S_0000020107fdeb90;
+ .timescale 0 0;
+v0000020107fdeeb0_0 .var/cobj "@";
+TD_$unit.example.display ;
+    %pushi/vec4 1, 0, 32;
+    %load/obj v0000020107fdeeb0_0;
+    %store/prop/v 0, 32; Store in bool property data
+    %pop/obj 1, 0;
+    %vpi_call/w 3 7 "$display", "The value of data is %0d", v0000020107ea1a30_0 {0 0 0};
+    %end;
+S_0000020107ea6090 .scope module, "tb" "tb" 3 12;
+ .timescale 0 0;
+v0000020107ea1ad0_0 .var/cobj "ex_h1";
+v0000020107ea1b70_0 .var/cobj "ex_h2";
+    .scope S_0000020107fdeb90;
+T_1 ;
+    %pushi/vec4 86, 0, 32;
+    %store/vec4 v0000020107ea1a30_0, 0, 32;
+    %end;
+    .thread T_1;
+    .scope S_0000020107ea6090;
+T_2 ;
+    %new/cobj C0000020107ea6e70;
+    %store/obj v0000020107ea1ad0_0;
+    %new/cobj C0000020107ea6e70;
+    %store/obj v0000020107ea1b70_0;
+    %alloc S_0000020107fded20;
+    %load/obj v0000020107ea1ad0_0;
+    %store/obj v0000020107fdeeb0_0;
+    %callf/void TD_$unit.example.display, S_0000020107fded20;
+    %free S_0000020107fded20;
+    %alloc S_0000020107fded20;
+    %load/obj v0000020107ea1b70_0;
+    %store/obj v0000020107fdeeb0_0;
+    %callf/void TD_$unit.example.display, S_0000020107fded20;
+    %free S_0000020107fded20;
+    %vpi_call/w 3 23 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "static_property.sv";
